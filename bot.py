@@ -28,13 +28,13 @@ def main():
       },
       {
         "card": {
-          "title": nombre,
-          "subtitle": subtitulo,
-          "imageUri": url,
+          "title": "jjkk",
+          "subtitle": "nkkjokj",
+          "imageUri": "https://image.shutterstock.com/image-vector/sad-apologizing-emoticon-emoji-holding-260nw-1398672683.jpg",
           "buttons": [
             {
-              "text": mensaj,
-              "postback": sitio
+              "text": "uhih",
+              "postback": "https://www.google.com
             },
             {
               "text": "Consulta con nuestro Agente",
