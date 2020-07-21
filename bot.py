@@ -24,7 +24,16 @@ def main():
     sitio = "https://tecno-store2.herokuapp.com/" +sitio
     if response is not None:
         json_data = {
-            
+            "fulfillmentMessages": [
+            {
+        "text": {
+          "text": [
+            "Informacion detallada: "
+          ]
+        }
+      },
+            {
+            "payload":{
     "richContent": [
         [
          {
@@ -53,6 +62,9 @@ def main():
       }
         ]
     ]
+            }
+      }
+            ]
 
      }
     else:
