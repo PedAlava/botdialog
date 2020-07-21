@@ -28,6 +28,32 @@ def main():
             {
         "text": {
           "text": [
+            "informacion detallada: "
+          ]
+        },
+        "platform": "TELEGRAM"
+      },
+      {
+        "card": {
+          "title": nombre,
+          "subtitle": subtitulo,
+          "imageUri": url,
+          "buttons": [
+            {
+              "text": mensaj,
+              "postback": sitio
+            },
+            {
+              "text": "Consulta con nuestro Agente",
+              "postback": "https://tecno-store2.herokuapp.com/dialog"
+            }
+          ]
+        },
+        "platform": "TELEGRAM"
+      }    
+            ,{
+        "text": {
+          "text": [
             "Informacion detallada: "
           ]
         }
