@@ -34,7 +34,7 @@ def main():
           "buttons": [
             {
               "text": "uhih",
-              "postback": "https://www.google.com
+              "postback": "https://www.google.com"
             },
             {
               "text": "Consulta con nuestro Agente",
