@@ -15,37 +15,46 @@ def main():
     parametro = data['queryResult']['parameters']['modelos']
     print(parametro)
     response = extracmodelo.modelo(parametro)
+    nombre ,precio ,url,sitio = extracmodelo.mensaTelegram(parametro)
+    subtitulo = "Modelo: " + nombre +" Precio: "+ precio
+    if sitio == "store":
+        mensaj = "Visualiza algun producto de tu interes"
+    else:
+        mensaj = "Visualiza tu "+ nombre +" y añadelo al carrito si deseas."
+    sitio = "https://tecno-store2.herokuapp.com/" +sitio
     if response is not None:
         json_data = {
-             "fulfillmentMessages": [
-      {
-        "text": {
-          "text": [
-            "pruebas: "
-          ]
-        },
-        "platform": "PLATFORM_UNSPECIFIED"
+            
+    "richContent": [
+        [
+         {
+        "type": "image",
+        "rawUrl": url,
+        "accessibilityText": "Producto"
       },
       {
-        "card": {
-          "title": "jjkk",
-          "subtitle": "nkkjokj",
-          "imageUri": "https://image.shutterstock.com/image-vector/sad-apologizing-emoticon-emoji-holding-260nw-1398672683.jpg",
-          "buttons": [
-            {
-              "text": "uhih",
-              "postback": "https://www.google.com"
-            },
-            {
-              "text": "Consulta con nuestro Agente",
-              "postback": "https://tecno-store2.herokuapp.com/dialog"
-            }
-          ]
-        },
-        "platform": "PLATFORM_UNSPECIFIED"
+        "type": "info",
+        "title": nombre,
+        "subtitle": subtitulo,
+        "actionLink": sitio
+      },
+      {
+        "type": "chips",
+        "options": [
+          {
+            "text": mensaj,
+            "link": sitio
+          },
+          {
+            "text": "Visualizar mas productos",
+            "link": "https://tecno-store2.herokuapp.com/store"
+          }
+        ]
       }
-            ]
-        }
+        ]
+    ]
+
+     }
     else:
         json_data = {
             "fulfillmentText": response,"buttons":[ { 
